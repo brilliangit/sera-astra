@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "target": "es6",
+        "sourceMap": true,
+        "paths": {
+            "components":["./components"],
+            "screen":["./screen"],
+            "controller":["./app/controllers"],
+            "models":["./app/models"],
+            "helpers":["./app/helpers"],
+            "configs":["./app/configs"],
+            "assets":["./app/assets"]
+        }
+    }
+}

@@ -1,0 +1,83 @@
+### REGISTER
+POST https://reqres.in/api/register
+
+{
+    "email": "bril@gmail.com",
+    "password": "pistol"
+}
+
+### LOGIN
+POST https://reqres.in/api/login
+
+{
+    "email": "eve.holt@reqres.in",
+    "password": "pistol"
+}
+
+### GET DATA
+
+GET https://reqres.in/api/users?page=2
+
+
+# Result
+{
+  "page": 2,
+  "per_page": 6,
+  "total": 12,
+  "total_pages": 2,
+  "data": [
+    {
+      "id": 7,
+      "email": "michael.lawson@reqres.in",
+      "first_name": "Michael",
+      "last_name": "Lawson",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg"
+    },
+    {
+      "id": 8,
+      "email": "lindsay.ferguson@reqres.in",
+      "first_name": "Lindsay",
+      "last_name": "Ferguson",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"
+    },
+    {
+      "id": 9,
+      "email": "tobias.funke@reqres.in",
+      "first_name": "Tobias",
+      "last_name": "Funke",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"
+    },
+    {
+      "id": 10,
+      "email": "byron.fields@reqres.in",
+      "first_name": "Byron",
+      "last_name": "Fields",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg"
+    },
+    {
+      "id": 11,
+      "email": "george.edwards@reqres.in",
+      "first_name": "George",
+      "last_name": "Edwards",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg"
+    },
+    {
+      "id": 12,
+      "email": "rachel.howell@reqres.in",
+      "first_name": "Rachel",
+      "last_name": "Howell",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg"
+    }
+  ],
+  "support": {
+    "url": "https://reqres.in/#support-heading",
+    "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+  },
+  "ad": {
+    "company": "Hotjar",
+    "description": "See how visitors are really using your website, collect user feedback and turn more visitors into customers.",
+    "url": "https://srv.buysellads.com/ads/click/x/GTND42JECWBDVK3MF6BLYKQNCTBIC5QNCKAIVZ3JCYYDP2JECA7DPK3KCKAI4KQ7CA7I5K7NCKADK5QYCEAD6KJKC6SDT2QWCYSDEK3EHJNCLSIZ"
+  }
+}
+
+###

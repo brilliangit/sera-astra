@@ -1,0 +1,79 @@
+$widthdefault: 1136px;
+
+/* COLORS */
+$white: #FFFFFF;
+$black: #000000;
+
+$primary-blue: #1a237e;
+$secondary-blue: #0d47a1;
+$third-blue: #1565c0;
+
+$color-black: #212121;
+
+
+
+
+/* FONT FAMILY */
+$primary-font: Museo Sans;
+
+/* FONT SIZES */
+$xs-fs: 10px;
+$sm-fs: 11px;
+$md-fs: 13px;
+$lg-fs: 16px;
+$xl-fs: 24px;
+$xxl-fs: 32px;
+
+$container-width: 1136px;
+
+$breakpoints: (
+  iphone5: 320px,
+  galaxys5: 360px,
+  iphone6: 375px,
+  iphone8: 400px,
+  pixel3: 412px,
+  galaxyNote5: 480px,
+  nexus7: 600px,
+  ipad: 768px,
+  ipadPro: 1024px,
+  tv: 1280px
+);
+
+@mixin respond-between($lower, $upper) {
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  } @else {
+    @if (map-has-key($breakpoints, $lower) == false) {
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+    @if (map-has-key($breakpoints, $upper) == false) {
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+
+@mixin respond-above($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
