@@ -14,3 +14,9 @@ export const getDataPerson = (offset) => {
             .catch(error => console.log(err))
     }
 }
+
+export const resetAlert = () => {
+    return async dispatch => {
+        dispatch({ type: CONF.ALERT_RESET})
+    }
+}

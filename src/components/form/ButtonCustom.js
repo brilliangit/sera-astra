@@ -11,12 +11,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const ButtonCustom = ({ variant, color, text }) => {
+const ButtonCustom = (props) => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Button variant={variant} color={color}>
-                {text}
+            <Button {...props}>
+                {props.text}
             </Button>
         </div>
     )

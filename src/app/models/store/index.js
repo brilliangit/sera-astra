@@ -15,7 +15,7 @@ import rootReducer from '../reducers';
 const persistConfig = {
     key: 'root',
     storage: storage,
-    whitelist: []
+    whitelist: ['LoginReducer']
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const logMiddleware = createLogger({

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import {
     Wrapper, Content,
-    CardPerson
+    CardPerson, Header
 } from 'components';
 import { connect } from 'react-redux';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -19,6 +19,7 @@ const Dashboard = (props) => {
     }
 
     useEffect(() => {
+        console.log('masuk')
         props.getdata(state);
     }, [state]);
 
@@ -30,6 +31,7 @@ const Dashboard = (props) => {
         <>
             <Wrapper target="xs">
                 <div className="dashboard-page">
+                    <Header />
                     <InfiniteScroll
                         initialLoad={false}
                         loadMore={fetchMoreData}

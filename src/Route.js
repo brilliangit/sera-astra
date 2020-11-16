@@ -3,10 +3,11 @@ import { Router, Switch, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import {
     LoginScreen,
+    RegisterScreen,
     Dashboard
 } from 'screen';
 
-import { PublicRoute } from 'components';
+import { PublicRoute, PrivateRoute } from 'components';
 const history = createBrowserHistory();
 
 export const Routing = () => (
@@ -15,7 +16,8 @@ export const Routing = () => (
             <Switch>
                 <PublicRoute exact path="/" component={LoginScreen} />
                 <PublicRoute exact path="/auth/login" component={LoginScreen} />
-                <PublicRoute exact path="/dashboard" component={Dashboard} />
+                <PublicRoute exact path="/auth/register" component={RegisterScreen} />
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
         </Router>
     </>
